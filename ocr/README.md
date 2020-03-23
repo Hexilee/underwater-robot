@@ -10,11 +10,11 @@ brew install python3 python3-pip
 
 - Windows
 
-[Anaconda](https://www.anaconda.com/distribution/) is strongly recommended.
+    [Anaconda](https://www.anaconda.com/distribution/) is strongly recommended.
 
 - Linux
 
-In any way as you like.
+    In any way as you like.
 
 #### Dependencies
 
