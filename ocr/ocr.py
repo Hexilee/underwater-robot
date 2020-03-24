@@ -29,12 +29,12 @@ elif args["preprocess"] == "blur":
 
 # write the grayscale image to disk as a temporary file so we can
 # apply OCR to it
-filename = "{}.png".format(os.getpid())
-cv2.imwrite(filename, gray)
+filename = os.path.basename(args["image"])
+file_path = os.path.join("output", filename)
+cv2.imwrite(file_path, gray)
 # load the image as a PIL/Pillow image, apply OCR, and then delete
 # the temporary file
-text = pytesseract.image_to_string(Image.open(filename))
-os.remove(filename)
+text = pytesseract.image_to_string(Image.open(file_path))
 print(text)
 
 # show the output images

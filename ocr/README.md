@@ -1,5 +1,22 @@
 ### Install
 
+#### Tesseract
+
+- macOS
+
+```bash
+brew install tesseract
+```
+
+- Windows
+
+    [Setup](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.0.20190623.exe)
+
+- Linux
+
+    In any way you like.
+
+
 #### Python3
 
 - macOS
@@ -14,7 +31,7 @@ brew install python3 python3-pip
 
 - Linux
 
-    In any way as you like.
+    In any way you like.
 
 #### Dependencies
 
