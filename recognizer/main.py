@@ -21,6 +21,7 @@ while True:
         break
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     if args["mode"] == "line":
+        output = frame.copy()
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
         lower_red = np.array([-10, 43, 46])
         upper_red = np.array([10, 255, 255])
@@ -34,9 +35,8 @@ while True:
             x_start = int(np.mean(xs_start))
             x_end = int(np.mean(xs_end))
             # print("start: (%d, %d), end: (%d, %d)" %(x_start, y_start, x_end, y_end))
-            cv2.line(frame, (x_start, y_start), (x_end, y_end), (0, 255, 0), 3)
-        cv2.imshow("red line", red_line)
-        cv2.imshow("frame", frame)
+            cv2.line(output, (x_start, y_start), (x_end, y_end), (0, 255, 0), 3)
+        cv2.imshow("output", np.hstack([frame, output]))
     if args["mode"] == "circle":
         # detect circles in the image
         circles = cv2.HoughCircles(gray, cv2.HOUGH_GRADIENT, 1.2, 100)
@@ -79,7 +79,7 @@ while True:
         text = pytesseract.image_to_string(Image.open("output/ocr.png"))
         if text != "":
             print(text)
-    if cv2.waitKey(delay=10) == 'q':
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 video.release()
