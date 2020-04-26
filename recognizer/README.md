@@ -41,20 +41,6 @@ pip3 install -r requirements.txt
 
 #### Run
 
-- Get help
 ```bash
-python3 ocr.py --help
+python3 main.py -h
 ```
-
-- test1
-
-```bash
-python3 ocr.py --image test-set/test1.png
-```
-
-- test2
-
-```bash
-python3 ocr.py --image test-set/test2.png --preprocess blur
-```
-
